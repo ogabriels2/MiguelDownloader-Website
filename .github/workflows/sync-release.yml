@@ -1,0 +1,87 @@
+name: Sync published release
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: sync-release
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    name: Refresh download metadata
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+
+      - name: Read the latest immutable release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: pwsh atualizar.ps1
+
+      - name: Verify the updated website
+        shell: pwsh
+        run: pwsh ferramentas/verificar.ps1
+
+      - name: Publish metadata change
+        id: publish
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "The website already matches the latest release."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html en/index.html sitemap.xml
+          git commit -m "Sync the latest Miguel Downloader release"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      # A push made with GITHUB_TOKEN deliberately does not start another workflow. Deploy the
+      # verified working tree here as well, so an automatic metadata update reaches production.
+      - name: Configure GitHub Pages
+        if: steps.publish.outputs.changed == 'true'
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+
+      - name: Assemble public website
+        if: steps.publish.outputs.changed == 'true'
+        shell: bash
+        run: |
+          mkdir _site
+          rsync -a \
+            --exclude '.git' \
+            --exclude '.github' \
+            --exclude '_site' \
+            --exclude 'ferramentas' \
+            --exclude 'LEIA-ME.md' \
+            --exclude 'MICROSOFT-STORE.md' \
+            --exclude 'README.md' \
+            --exclude 'atualizar.ps1' \
+            ./ _site/
+
+      - name: Upload website artifact
+        if: steps.publish.outputs.changed == 'true'
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        if: steps.publish.outputs.changed == 'true'
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4

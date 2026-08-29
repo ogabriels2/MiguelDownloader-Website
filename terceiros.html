@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Componentes de terceiros — Miguel Downloader</title>
+<meta name="description" content="Todo componente distribuído com o Miguel Downloader, sua licença, seu titular e onde obter o código-fonte, nas edições do site e da Microsoft Store.">
+<meta name="theme-color" content="#14120f">
+<link rel="canonical" href="https://migueldownloader.ogabriels.com/terceiros.html">
+<link rel="alternate" hreflang="pt-BR" href="https://migueldownloader.ogabriels.com/terceiros.html">
+<link rel="alternate" hreflang="en" href="https://migueldownloader.ogabriels.com/en/third-party.html">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
+<div class="stage"><header class="masthead">
+  <div class="wrap">
+    <a class="wordmark" href="./">
+      <svg width="26" height="26" viewBox="0 0 1024 1024" aria-hidden="true" focusable="false">
+        <rect width="1024" height="1024" rx="184" fill="#241d12"/>
+        <g fill="#f2b736">
+          <rect x="458" y="250" width="108" height="300"/><path d="M316 520h392L512 742Z"/>
+          <rect x="300" y="826" width="424" height="76" rx="38"/>
+        </g>
+      </svg>
+      <span translate="no">Miguel Downloader</span>
+    </a>
+    <nav aria-label="Documentos">
+      <a href="privacidade.html">Privacidade</a>
+      <a href="licenca.html">Licença</a>
+    </nav>
+    <div class="lang">
+      <a href="terceiros.html" aria-current="page" lang="pt-BR">PT</a>
+      <a href="en/third-party.html" lang="en" hreflang="en">EN</a>
+    </div>
+  </div>
+</header></div>
+
+<main id="conteudo" class="doc">
+  <div class="wrap">
+    <h1>Componentes de terceiros</h1>
+    <p class="updated">Revisada em 29 de agosto de 2026 · Referente à versão 1.0.0</p>
+
+    <p>
+      O Miguel Downloader instala, junto com o programa do autor, componentes escritos por outras
+      pessoas. Cada um continua sob a licença do seu próprio autor. O mesmo conteúdo acompanha a
+      instalação, no arquivo <span class="mono">AVISOS-DE-TERCEIROS.txt</span>, com os textos
+      completos das licenças na pasta <span class="mono">licencas</span>.
+    </p>
+
+    <p class="callout">
+      As licenças GPL e LGPL dão direitos a você. O <span translate="no">FFmpeg</span> está sob
+      GPL versão 3 na edição do site e LGPL versão 3 ou posterior na Microsoft Store; ambas garantem
+      acesso ao código-fonte. A LGPL 2.1 do <span translate="no">TagLib#</span> garante também o
+      direito de substituir a biblioteca por uma versão sua.
+    </p>
+
+    <h2>Relação completa</h2>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Componente</th><th scope="col">Versão</th>
+            <th scope="col">Licença</th><th scope="col">Papel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row" translate="no">yt-dlp</th><td class="mono">2026.08.19</td><td>Unlicense</td><td class="note">identifica e transfere a mídia dos sites</td></tr>
+          <tr><th scope="row" translate="no">FFmpeg / ffprobe</th><td class="mono">N-126312 / N-126308 (Store)</td><td>GPL-3.0 / LGPL-3.0+</td><td class="note">remuxa, converte e valida o arquivo final</td></tr>
+          <tr><th scope="row" translate="no">Deno</th><td class="mono">2.9.6</td><td>MIT</td><td class="note">resolve o JavaScript que alguns sites exigem</td></tr>
+          <tr><th scope="row" translate="no">TagLib#</th><td class="mono">2.3.0</td><td>LGPL-2.1</td><td class="note">grava metadados nos arquivos de áudio</td></tr>
+          <tr><th scope="row" translate="no">WPF-UI</th><td class="mono">4.3.0</td><td>MIT</td><td class="note">controles e visual Fluent da interface</td></tr>
+          <tr><th scope="row" translate="no">Velopack</th><td class="mono">1.2.0</td><td>MIT</td><td class="note">instalador e atualizações verificadas</td></tr>
+          <tr><th scope="row">.NET 8 e bibliotecas Microsoft</th><td class="mono">8.0</td><td>MIT</td><td class="note">runtime e infraestrutura</td></tr>
+          <tr><th scope="row" translate="no">Serilog</th><td class="mono">4.4.0</td><td>Apache-2.0</td><td class="note">registros de execução</td></tr>
+          <tr><th scope="row" translate="no">SQLite</th><td class="mono">3</td><td>domínio público</td><td class="note">histórico e fila de downloads</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="ffmpeg"><span translate="no">FFmpeg</span>: GPL no site, LGPL na Store</h2>
+    <p>
+      Os binários distribuídos são compilações não modificadas publicadas pelo projeto
+      yt-dlp/FFmpeg-Builds, geradas com <span class="mono">--enable-gpl</span> e
+      <span class="mono">--enable-version3</span>, o que coloca esta compilação sob a GPL versão 3.
+    </p>
+    <p>
+      A edição da Microsoft Store usa, em vez dela, a compilação compartilhada e não modificada
+      <span class="mono">ffmpeg-master-latest-win64-lgpl-shared.zip</span>, publicada por
+      <a href="https://github.com/BtbN/FFmpeg-Builds/releases">BtbN/FFmpeg-Builds</a>. Ela é gerada
+      sem x264/x265 e o próprio binário declara LGPL versão 3 ou posterior. As DLLs permanecem
+      separadas no pacote, preservando na prática o direito de substituição concedido pela LGPL.
+    </p>
+    <p>
+      O Miguel Downloader executa <span class="mono">ffmpeg.exe</span> e
+      <span class="mono">ffprobe.exe</span> como processos separados, passando argumentos pela linha
+      de comando e lendo a saída. Não há vinculação estática nem dinâmica ao código do
+      <span translate="no">FFmpeg</span>. São programas independentes reunidos num mesmo instalador,
+      e essas licenças alcançam o <span translate="no">FFmpeg</span>, não o Miguel Downloader.
+    </p>
+
+    <h3>Como obter o código-fonte</h3>
+    <p>Você tem duas formas.</p>
+    <p>
+      A primeira é baixá-lo de
+      <a href="https://github.com/yt-dlp/FFmpeg-Builds/releases">yt-dlp/FFmpeg-Builds</a>, onde o
+      projeto publica, na mesma página de cada versão, os binários e tudo que é necessário para
+      reproduzi-los. A receita da compilação está em
+      <a href="https://github.com/yt-dlp/FFmpeg-Builds">yt-dlp/FFmpeg-Builds</a> e o código do
+      próprio <span translate="no">FFmpeg</span> em
+      <a href="https://git.ffmpeg.org/ffmpeg.git">git.ffmpeg.org</a>.
+      Para a edição da Store, os binários e a receita de compilação estão em
+      <a href="https://github.com/BtbN/FFmpeg-Builds">BtbN/FFmpeg-Builds</a>.
+    </p>
+    <p class="callout">
+      A segunda é pedir. Esta é uma oferta escrita, válida por três anos contados da data em que
+      você recebeu sua cópia do programa, de fornecer o código-fonte completo correspondente aos
+      binários de <span translate="no">FFmpeg</span> aqui distribuídos, em meio legível por máquina,
+      cobrando no máximo o custo de entrega. Escreva para
+      <a href="mailto:contato@ogabriels.com">contato@ogabriels.com</a>.
+    </p>
+
+    <h2 id="taglib"><span translate="no">TagLib#</span> e a LGPL 2.1</h2>
+    <p>
+      A LGPL 2.1 assegura a você modificar o <span translate="no">TagLib#</span> e usar a sua versão
+      no lugar da distribuída. Para que isso seja possível na prática, o programa é publicado sem
+      empacotamento em arquivo único: <span class="mono">TagLib.dll</span> fica solta na pasta do
+      programa e pode ser trocada por outra compilação compatível. O código-fonte está em
+      <a href="https://github.com/mono/taglib-sharp">mono/taglib-sharp</a>, e também pode ser pedido
+      nos mesmos termos da oferta acima.
+    </p>
+
+    <h2>Textos completos</h2>
+    <p>
+      Os textos integrais da GPL-3.0, da LGPL-3.0, da LGPL-2.1 e da Apache-2.0 acompanham a instalação na pasta
+      <span class="mono">licencas</span> e estão no
+      <a href="https://github.com/ogabriels2/MiguelDownloader/tree/main/legal">repositório do projeto</a>.
+    </p>
+
+    <p>
+      Erro ou omissão neste documento:
+      <a href="mailto:contato@ogabriels.com">contato@ogabriels.com</a>.
+    </p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="colophon">
+      <p><a href="./">Voltar ao início</a></p>
+      <p>Copyright © 2026 Gabriel Silva Dias Moreira. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

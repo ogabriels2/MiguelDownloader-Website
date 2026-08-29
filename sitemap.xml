@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://migueldownloader.ogabriels.com/</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://migueldownloader.ogabriels.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://migueldownloader.ogabriels.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://migueldownloader.ogabriels.com/"/>
+  </url>
+  <url>
+    <loc>https://migueldownloader.ogabriels.com/en/</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://migueldownloader.ogabriels.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://migueldownloader.ogabriels.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://migueldownloader.ogabriels.com/"/>
+  </url>
+  <url><loc>https://migueldownloader.ogabriels.com/suporte.html</loc><lastmod>2026-08-29</lastmod><priority>0.6</priority></url>
+  <url><loc>https://migueldownloader.ogabriels.com/privacidade.html</loc><lastmod>2026-08-29</lastmod><priority>0.5</priority></url>
+  <url><loc>https://migueldownloader.ogabriels.com/licenca.html</loc><lastmod>2026-08-29</lastmod><priority>0.5</priority></url>
+  <url><loc>https://migueldownloader.ogabriels.com/terceiros.html</loc><lastmod>2026-08-29</lastmod><priority>0.5</priority></url>
+  <url><loc>https://migueldownloader.ogabriels.com/en/support.html</loc><lastmod>2026-08-29</lastmod><priority>0.6</priority></url>
+  <url><loc>https://migueldownloader.ogabriels.com/en/privacy.html</loc><lastmod>2026-08-29</lastmod><priority>0.5</priority></url>
+  <url><loc>https://migueldownloader.ogabriels.com/en/licence.html</loc><lastmod>2026-08-29</lastmod><priority>0.5</priority></url>
+  <url><loc>https://migueldownloader.ogabriels.com/en/third-party.html</loc><lastmod>2026-08-29</lastmod><priority>0.5</priority></url>
+</urlset>
